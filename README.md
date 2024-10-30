@@ -1,1 +1,3 @@
 # CalculatorApp
+
+как это работает 
