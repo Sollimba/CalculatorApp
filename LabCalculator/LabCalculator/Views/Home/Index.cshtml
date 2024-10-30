@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#expression').on('keypress', function (e) {
+                if (e.which === 13) { // Enter key
+                    var input = $(this).val().trim(); // Удаляем пробелы в начале и в конце
+                    var regex = /(-?\d+(\.\d+)?)\s*([+\-*/^])\s*(-?\d+(\.\d+)?)/; // Для двух операндов с возможными пробелами
+                    var singleArgRegex = /([+\-*/^]|sqrt|sin|cos|tan|cot)\s*(-?\d+(\.\d+)?)/; // Для одной операции с одним операндом
+
+                    var match = input.match(regex) || input.match(singleArgRegex); // Попробовать найти два операнда или одну операцию
+
+                    if (match) {
+                        var firstOperand, operation, secondOperand = null; // Устанавливаем secondOperand в null по умолчанию
+
+                        if (match.length === 6) { // Два операнда
+                            firstOperand = parseFloat(match[1]);
+                            operation = match[3];
+                            secondOperand = parseFloat(match[4]);
+                        } else { // Одна операция с одним операндом
+                            firstOperand = parseFloat(match[2]); // Используем правильный индекс для первого операнда
+                            operation = match[1];
+                        }
+
+                        // Выполняем AJAX-запрос с учетом операции
+                        $.ajax({
+                            type: 'POST',
+                            url: '/api/calculator',
+                            data: JSON.stringify({
+                                FirstOperand: firstOperand,
+                                Operation: operation,
+                                SecondOperand: secondOperand // Это будет null, если в операции только один операнд
+                            }),
+                            contentType: 'application/json; charset=utf-8',
+                            dataType: 'json',
+                            success: function (response) {
+                                $('#result').text('Result: ' + response);
+                            },
+                            error: function (xhr) {
+                                $('#result').text('Error: ' + xhr.responseText);
+                            }
+                        });
+                    } else {
+                        $('#result').text('Error: Invalid input format. Use "operand operation operand"');
+                    }
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input type="text" id="expression" placeholder="Enter expression e.g. 2+3 or sin30" />
+    <div id="result"></div>
+</body>
+</html>
