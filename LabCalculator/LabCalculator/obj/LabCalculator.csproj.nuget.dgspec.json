@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "G:\\проекты\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj": {}
+    "C:\\Users\\mrjes\\Desktop\\Сети\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj": {}
   },
   "projects": {
-    "G:\\проекты\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj": {
+    "C:\\Users\\mrjes\\Desktop\\Сети\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\проекты\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj",
+        "projectUniqueName": "C:\\Users\\mrjes\\Desktop\\Сети\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj",
         "projectName": "LabCalculator",
-        "projectPath": "G:\\проекты\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj",
+        "projectPath": "C:\\Users\\mrjes\\Desktop\\Сети\\CalculatorApp\\LabCalculator\\LabCalculator\\LabCalculator.csproj",
         "packagesPath": "C:\\Users\\mrjes\\.nuget\\packages\\",
-        "outputPath": "G:\\проекты\\CalculatorApp\\LabCalculator\\LabCalculator\\obj\\",
+        "outputPath": "C:\\Users\\mrjes\\Desktop\\Сети\\CalculatorApp\\LabCalculator\\LabCalculator\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\mrjes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,11 +38,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -64,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
